@@ -1,4 +1,4 @@
-connect2014
+Connect2014
 ===========
 
 Repository created for showcasing Grunt during the Squiz User Summit 2014
