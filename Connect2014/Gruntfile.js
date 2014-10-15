@@ -7,8 +7,8 @@ module.exports = function(grunt) {
                 seperator: ';'
             },
             dist: {
-                //src: ['src/js/module.js', 'src/js/main.js'],
-                src: ['src/js/module.js', 'src/js/main.js']
+                //src: ['src/js/*.js'],
+                src: ['src/js/module.js', 'src/js/main.js'],
                 dest: 'dist/js/build.js'
             }
         },
@@ -19,18 +19,10 @@ module.exports = function(grunt) {
                 }
             }
         },
-        pagespeed: {
-            options: {
-                nokey: true,
-                url: "http://www.adidas.co.uk/"
-            },
-            prod: {
-                options: {
-                    url: "http://www.adidas.co.uk/",
-                    locale: "en_GB",
-                    strategy: "mobile",
-                    threshold: 80
-                }
+        smushit: {
+            mygroup: {
+                src: ['src/images/*.png', 'src/images/*.jpg'],
+                dest: 'dist/img/'
             }
         }
     });
@@ -38,9 +30,9 @@ module.exports = function(grunt) {
     // Load plugins
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-pagespeed');
+    grunt.loadNpmTasks('grunt-smushit');
 
     // Register tasks
-    grunt.registerTask('default', ['concat', 'uglify', 'pagespeed']);
+    grunt.registerTask('default', ['concat', 'uglify', 'smushit']);
 
 };

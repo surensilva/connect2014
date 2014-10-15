@@ -1,5 +1,5 @@
 var alert_popup={
 	init:function(){
-	console.log("Squiz Connect2014")
+		console.log("Squiz Connect2014")
 	}
 }
